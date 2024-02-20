@@ -1,17 +1,40 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
+import styles from './Layout.module.css';
 
 const Layout = () => {
+  const setActiveLink = (isActive: boolean) =>
+    isActive ? `${styles.link} ${styles.active}` : styles.link;
   return (
-    <>
-      <header>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/form">FormPage</NavLink>
+    <div className={styles.layout}>
+      <header className={styles.header}>
+        <div className={styles.container}>
+          <NavLink className={({ isActive }) => setActiveLink(isActive)} to="/">
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => setActiveLink(isActive)}
+            to="/form"
+          >
+            FormPage
+          </NavLink>
+        </div>
       </header>
-      <main>
+      <main className={styles.main}>
         <Outlet />
       </main>
-      <footer>footer</footer>
-    </>
+      <footer className={styles.footer}>
+        <div>@ 2024</div>
+        <div className={styles.github}>
+          <Link
+            to="https://github.com/annettabel87"
+            className={styles.footerLink}
+          >
+            <img src="/githubIcon.svg" alt="github" className={styles.icon} />
+          </Link>
+        </div>
+        <div>Анна Репешко</div>
+      </footer>
+    </div>
   );
 };
 

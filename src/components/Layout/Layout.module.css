@@ -1,0 +1,63 @@
+@import url('../../styles/variables.css');
+
+.layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  min-height: 80px;
+  padding: 15px;
+  color: var(--main-text);
+  margin: 0 auto;
+}
+
+.container {
+  margin: auto;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.link {
+  padding: 5px;
+  border-radius: 2px;
+  transition: all 0.3s;
+  opacity: 0.7;
+}
+
+.link:hover {
+  background-color: var(--main-text);
+  opacity: 0.7;
+  color: var(--dark-text);
+}
+
+.active {
+  opacity: 1;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.footer {
+  min-height: 80px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.icon {
+  width: 40px;
+  transition: all 0.3s;
+}
+
+.icon:hover {
+  opacity: 0.7;
+}
