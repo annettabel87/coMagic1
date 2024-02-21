@@ -1,0 +1,33 @@
+.form {
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    max-width: 500px;
+    align-content: center;
+    justify-content: center;
+    height: fit-content;
+    border: 2px solid #ccc;
+    gap: 10px;
+}
+
+.textInput {
+    width: 93%;
+    border: none;    
+    padding: 8px;    
+    border-radius: 2px;
+    outline: none;
+    color: var(--dark-text);
+    font-weight: 500;
+}
+
+.textInput:focus {
+    opacity: 0.8;
+}
+
+.validateError {
+    color: red;
+}
+
+.label {
+    font-weight: 400;
+}

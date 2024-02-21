@@ -1,30 +1,21 @@
-import { MouseEvent } from 'react';
-import Button from '../../components/Button/Button';
+import { useState } from 'react';
+import { CardsField } from '../../components/CardsField/CardsField';
+import { Form } from '../../components/Form/Form';
+import { IFormCard } from '../../types/types';
+import styles from './FormPage.module.css';
 
 const FormPage = () => {
-  const buttonStyles = {
-    backgroundColor: 'rgb(161, 124, 74)',
-  };
-  const buttonHoverStyles = {
-    backgroundColor: 'rgb(199, 153, 92)',
+  const [cards, setCards] = useState<IFormCard[]>([]);
+  const addCardData = (data: IFormCard) => {
+    setCards((current) => [data, ...current]);
   };
 
-  const onClickHandler = (
-    e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
-  ) => {
-    console.log(e);
-  };
   return (
-    <div>
-      FormPage
-      <Button
-        type="button"
-        style={buttonStyles}
-        hoverStyle={buttonHoverStyles}
-        onClickHandler={(e) => onClickHandler(e)}
-      >
-        Добавить
-      </Button>
+    <div className={styles.formPage}>
+      <div className={styles.container}>
+        <Form addCardData={addCardData} />
+        <CardsField cardData={cards} />
+      </div>
     </div>
   );
 };
