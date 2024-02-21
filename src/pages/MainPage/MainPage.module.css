@@ -1,6 +1,6 @@
 .mainPage {
   height: 100%;
-  background-image: url('/public/mountains.jpg');
+  background-image: url('/mountains.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
