@@ -8,7 +8,7 @@ import styles from './Button.module.css';
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   type: 'button' | 'submit' | 'reset';
-  onClickHandler: (
+  onClickHandler?: (
     e: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
   ) => void;
   children: ReactNode;
@@ -37,7 +37,7 @@ const Button = ({
   return (
     <button
       type={type}
-      onClick={(e) => onClickHandler(e)}
+      onClick={(e) => onClickHandler && onClickHandler(e)}
       className={styles.button}
       style={{
         ...style,
