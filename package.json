@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://annettabel87.github.io",
+  "homepage": "https://annettabel87.github.io/coMagic1",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
